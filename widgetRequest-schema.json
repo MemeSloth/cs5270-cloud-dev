@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "pattern": "WidgetCreateRequest|WidgetDeleteRequest|WidgetUpdateRequest"
+    },
+    "requestId": {
+      "type": "string"
+    },
+    "widgetId": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string",
+      "pattern": "[A-Za-z ]+"
+    },
+    "label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "otherAttributes": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "value"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "requestId",
+    "widgetId",
+    "owner"
+  ]
+}
